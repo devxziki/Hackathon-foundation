@@ -12,8 +12,8 @@ project:
     - devxziki
 
 version:
-  current: 0.3.0
-  schema: 3
+  current: 0.4.0
+  schema: 4
   status: active
 
 philosophy:
@@ -105,6 +105,7 @@ company:
     items:
       - README.md: "Onboarding overview"
       - quick-start.md: "5-minute getting started guide"
+      - existing-project.md: "Setup guide for projects already in progress"
 
   workspace:
     description: "Workspace continuity — skills, state, and handoff protocols"
@@ -137,13 +138,18 @@ resources:
     path: resources/integrations/
     items:
       - README.md: "Integrations overview"
+      - UNIVERSAL.md: "Universal integration guide for any AI tool"
+      - antigravity.md: "Antigravity CLI integration guide"
+      - cursor.md: "Cursor IDE integration guide (includes .cursorrules)"
       - opencode.md: "OpenCode CLI integration guide"
+      - vscode.md: "VS Code + Copilot integration guide (includes copilot-instructions.md)"
 
   examples:
     description: "Example projects and usage patterns"
     path: resources/examples/
     items:
       - README.md: "Examples overview"
+      - hello-world/README.md: "End-to-end dark mode toggle example"
 
   community:
     description: "Community resources and free tool catalogs"
@@ -187,6 +193,6 @@ documentation:
     - pitch.md: "One-page elevator pitch"
 
 release:
-  version: "0.3.0"
+  version: "0.4.0"
   date: "2026-06-28"
   changelog: "CHANGELOG.md"

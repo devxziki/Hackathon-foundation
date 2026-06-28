@@ -159,6 +159,66 @@ else
 fi
 echo ""
 
+# Check 9: Integration files exist and have content
+echo "[Check 9] Integration guides (all tools)"
+check_file_not_empty "resources/integrations/UNIVERSAL.md"
+check_file_not_empty "resources/integrations/antigravity.md"
+check_file_not_empty "resources/integrations/cursor.md"
+check_file_not_empty "resources/integrations/vscode.md"
+echo ""
+
+# Check 10: Session scripts exist and are executable
+echo "[Check 10] Session scripts"
+if [ -f "scripts/start-session.sh" ]; then
+    if [ -x "scripts/start-session.sh" ]; then
+        echo -e "  ${GREEN}✓${NC} scripts/start-session.sh exists and is executable"
+        PASS=$((PASS + 1))
+    else
+        echo -e "  ${YELLOW}⚠${NC} scripts/start-session.sh exists but is not executable"
+        chmod +x "scripts/start-session.sh"
+        echo -e "  ${GREEN}✓${NC} Fixed: made scripts/start-session.sh executable"
+        FAIL=$((FAIL + 1))
+    fi
+else
+    echo -e "  ${RED}✗${NC} scripts/start-session.sh missing"
+    ERRORS="$ERRORS\n  Missing file: scripts/start-session.sh"
+    FAIL=$((FAIL + 1))
+fi
+if [ -f "scripts/end-session.sh" ]; then
+    if [ -x "scripts/end-session.sh" ]; then
+        echo -e "  ${GREEN}✓${NC} scripts/end-session.sh exists and is executable"
+        PASS=$((PASS + 1))
+    else
+        echo -e "  ${YELLOW}⚠${NC} scripts/end-session.sh exists but is not executable"
+        chmod +x "scripts/end-session.sh"
+        echo -e "  ${GREEN}✓${NC} Fixed: made scripts/end-session.sh executable"
+        FAIL=$((FAIL + 1))
+    fi
+else
+    echo -e "  ${RED}✗${NC} scripts/end-session.sh missing"
+    ERRORS="$ERRORS\n  Missing file: scripts/end-session.sh"
+    FAIL=$((FAIL + 1))
+fi
+echo ""
+
+# Check 11: .gitignore contains required entries
+echo "[Check 11] .gitignore entries"
+GITIGNORE=".gitignore"
+MISSING_ENTRIES=""
+for entry in ".session-context.txt" ".context-export.md" ".context-transfer.md" ".model-switch-context.md"; do
+    if grep -qF "$entry" "$GITIGNORE" 2>/dev/null; then
+        echo -e "  ${GREEN}✓${NC} .gitignore contains $entry"
+        PASS=$((PASS + 1))
+    else
+        MISSING_ENTRIES="$MISSING_ENTRIES\n    Missing: $entry"
+        WARN=$((WARN + 1))
+    fi
+done
+if [ -n "$MISSING_ENTRIES" ]; then
+    echo -e "  ${YELLOW}⚠${NC} .gitignore is missing entries:$MISSING_ENTRIES"
+fi
+echo ""
+
 # Summary
 echo "=== Summary ==="
 echo -e "  Passed: ${GREEN}$PASS${NC}"

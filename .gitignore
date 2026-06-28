@@ -21,3 +21,9 @@ build/
 
 # OS
 .DS_Store
+
+# Hackathon Foundation — transient context files
+.session-context.txt
+.context-export.md
+.context-transfer.md
+.model-switch-context.md
