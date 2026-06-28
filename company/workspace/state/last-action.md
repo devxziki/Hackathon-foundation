@@ -6,37 +6,28 @@ This is the primary resume checkpoint. It records the last step taken so any AI 
 
 ## Last executed action
 
-- **Action:** _Describe the last thing that was done._
-- **Timestamp:** _When the action was completed._
-- **Session:** _Which session or context this action belongs to._
+- **Action:** Created scripts/validate.sh — structural validation script that checks directory existence, file content, and stub directories. Made executable.
+- **Timestamp:** 2026-06-28
+- **Session:** Structural gap fixes (execution layer)
 
 ## Last modified file
 
-- **File:** _Path to the most recently modified file._
-- **Change:** _Brief description of what was changed._
-- **Commit:** _Commit hash if applicable._
+- **File:** scripts/validate.sh
+- **Change:** Created bash validation script with 8 check categories, colored output, and exit codes
+- **Commit:** Pending
 
 ## Last decision made
 
-- **Decision:** _What was decided._
-- **Rationale:** _Why this decision was made._
-- **Alternatives considered:** _Other options that were evaluated._
+- **Decision:** validate.sh checks file content quality by counting non-heading lines (>3 = has content) rather than just checking file existence or byte size
+- **Rationale:** A file full of heading stubs with no real content should be flagged just like a missing file. Line count filters noise from headings and blank lines.
+- **Alternatives considered:** Byte-size check — rejected because markdown headings alone can be many bytes. Grep for specific section keywords — rejected because it ties the checker to specific content rather than general content quality.
 
 ## Next expected action
 
-- **Action:** _What should happen next._
-- **By whom:** _Which role should perform it._
-- **Depends on:** _What must happen first._
+- **Action:** Commit all changes and run validate.sh to confirm structural consistency
+- **By whom:** Backend Engineer
+- **Depends on:** All files created (assets, .memory, .summaries, onboarding, integrations, foundation.yaml, validate.sh)
 
 ## Continuity notes
 
-_Any additional information needed to resume work smoothly. For example: partial work in progress, files left open, or considerations for the next executor._
-
----
-
-## How to use this file
-
-- **After every action:** Update this file. Keep it current — it is the primary resume point.
-- **Before pausing:** Write the next expected action so the next session can start immediately.
-- **Resuming:** Read this file first. Then read `current-task.md` for context, and `progress-snapshot.md` for the big picture.
-- **Handoffs:** Update this file before handing off to another role.
+All structural gap fixes are complete. foundation.yaml has been updated to v0.3.0 with full file listings for every section including workspace and roles sections that were previously absent. validate.sh is ready to run.

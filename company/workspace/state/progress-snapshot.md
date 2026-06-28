@@ -18,6 +18,9 @@ High-level overview of the project's current state. Use this to understand what 
 | P6 — Policies layer | Complete | 6 governance policies |
 | P7 — AI workspace context layer | Complete | skill-index, ai-model-guide |
 | P8 — State + context continuity | Complete | current-task, task-history, last-action, progress-snapshot |
+| P9 — Context + handoff system | Complete | 5 handoff protocols in company/workspace/handoff/ |
+| P10 — Finalization & demo pack | Complete | README rewrite, architecture, demo-script, pitch |
+| Structural gap fixes | Complete | Assets templates, .memory, .summaries, onboarding, integration, foundation.yaml, validate.sh |
 
 ## Completed components
 
@@ -27,6 +30,14 @@ High-level overview of the project's current state. Use this to understand what 
 - **Policies:** execution, communication, code-quality, ai-collaboration, security, review
 - **Workspace skills:** skill-index, ai-model-guide
 - **Workspace state:** current-task, task-history, last-action, progress-snapshot
+- **Workspace handoff:** cli-to-ide, ide-to-cli, model-switching, context-export-format, resume-protocol
+- **Asset templates:** context-export, task-assignment, pr-checklist, role-onboarding
+- **Asset workflows:** new-task-workflow
+- **Memory:** README, decisions (4 example entries)
+- **Summaries:** README, session-001 example
+- **Onboarding:** quick-start guide
+- **Integrations:** opencode.md
+- **Validation:** scripts/validate.sh
 
 ## Pending components
 
@@ -38,11 +49,14 @@ High-level overview of the project's current state. Use this to understand what 
 
 ## Metrics
 
-- **Total files created:** ~80+
+- **Total files created:** ~110+
 - **Departments defined:** 6
 - **Roles defined:** 13
 - **Policies defined:** 6
 - **Documentation files:** 27
+- **Asset templates:** 5
+- **Handoff protocols:** 5
+- **State files:** 4
 
 ---
 

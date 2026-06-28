@@ -1,20 +1,20 @@
 # Hackathon Foundation — Foundation Manifest
-# Version: 0.2.0
-# This manifest defines the schema of the repository structure.
-# Sections will be populated in future phases.
+# Version: 0.3.0
+# This manifest lists all files in the repository by section.
 
 project:
   name: Hackathon Foundation
-  description: "An AI-native software engineering framework for building better hackathon projects."
-  repository: ""
+  description: "An open-source, file-based AI workspace continuity framework. Solves AI context loss across CLI, IDE, and chat tools."
+  repository: "https://github.com/devxziki/Hackathon-foundation.git"
   license: MIT
-  created: ""
-  maintainers: []
+  created: "2026-06-28"
+  maintainers:
+    - devxziki
 
 version:
-  current: 0.2.0
-  schema: 2
-  status: foundation
+  current: 0.3.0
+  schema: 3
+  status: active
 
 philosophy:
   free_forever: true
@@ -24,33 +24,103 @@ philosophy:
   professionally_organized: true
 
 company:
-  description: "The internal software company"
+  description: "The internal software company — knowledge, roles, policies, and assets"
   path: company/
 
   handbook:
     description: "Shared knowledge, standards, and conventions"
     path: company/handbook/
-    items: []
+    items:
+      - README.md: "Handbook index with hierarchy and usage guide"
+      - ai-collaboration.md: "Multi-AI collaboration model and shared context principles"
+      - architecture-overview.md: "System hierarchy and layer interactions"
+      - coding-philosophy.md: "Philosophy guiding all code written under this framework"
+      - communication.md: "CEO-to-AI and AI-to-CEO communication standards"
+      - company-culture.md: "Core values guiding every decision"
+      - decision-making.md: "Engineering decision priority and trade-off resolution"
+      - definition-of-done.md: "Quality criteria before a task is considered complete"
+      - documentation-standards.md: "Markdown style, document structure, writing standards"
+      - engineering-principles.md: "10 engineering principles governing technical work"
+      - glossary.md: "Key terms defined throughout the framework"
+      - mission.md: "Why Hackathon Foundation exists and who it serves"
+      - project-lifecycle.md: "Stages from idea to maintenance"
+      - repository-philosophy.md: "Architectural reasoning and design principles"
 
   departments:
     description: "Engineering departments and role definitions"
     path: company/departments/
-    items: []
+    items:
+      - README.md: "Departments overview"
+      - design/: "UI/UX design department — 6 files"
+      - documentation/: "Documentation department — 6 files"
+      - engineering/: "Engineering department — 6 files"
+      - operations/: "Operations department — 6 files"
+      - quality-assurance/: "Quality assurance department — 6 files"
+      - research/: "Research department — 6 files"
+
+  roles:
+    description: "Role definitions for AI and human workers"
+    path: company/roles/
+    items:
+      - design/ui-designer.md: "Visual design and component specifications"
+      - design/ux-researcher.md: "User flows, journey maps, usability analysis"
+      - documentation/documentation-maintainer.md: "Documentation organization and standards"
+      - documentation/technical-writer.md: "User guides, API reference, tutorials"
+      - engineering/backend-engineer.md: "Server logic, APIs, data layers"
+      - engineering/frontend-engineer.md: "User interfaces, state management, routing"
+      - engineering/system-architect.md: "System design, architecture decisions"
+      - operations/devops-engineer.md: "CI/CD, deployment, monitoring"
+      - operations/infrastructure-manager.md: "Environments, networking, backups"
+      - qa/release-validator.md: "Release quality gates and go/no-go decisions"
+      - qa/test-engineer.md: "Test plans, test cases, defect reporting"
+      - research/ai-researcher.md: "AI model evaluation and integration research"
+      - research/tool-evaluator.md: "Tool, library, and framework evaluation"
 
   policies:
     description: "Rules, constraints, and quality gates"
     path: company/policies/
-    items: []
+    items:
+      - README.md: "Policies overview"
+      - ai-collaboration-policy.md: "Multi-model collaboration, conflict resolution, escalation"
+      - code-quality-policy.md: "Maintainability, clean architecture, consistency rules"
+      - communication-policy.md: "Role-to-role communication, progress reporting, blocker rules"
+      - execution-policy.md: "Mandatory 5-stage execution lifecycle"
+      - review-policy.md: "3-stage review process, quality gates, DoD enforcement"
+      - security-policy.md: "Safe execution boundaries, data safety, command safety"
 
   assets:
     description: "Reusable templates, skills, and workflows"
     path: company/assets/
-    items: []
+    items:
+      - README.md: "Assets overview"
+      - templates/context-export.md: "Filled example of the context export format"
+      - templates/task-assignment.md: "Template for assigning tasks to roles"
+      - templates/pr-checklist.md: "Pull request checklist enforcing DoD and policies"
+      - templates/role-onboarding.md: "Onboarding template for new AI assistants"
+      - workflows/new-task-workflow.md: "Step-by-step workflow for starting a new task"
 
   onboarding:
     description: "Guides for new users and AI assistants"
     path: company/onboarding/
-    items: []
+    items:
+      - README.md: "Onboarding overview"
+      - quick-start.md: "5-minute getting started guide"
+
+  workspace:
+    description: "Workspace continuity — skills, state, and handoff protocols"
+    path: company/workspace/
+    items:
+      - handoff/cli-to-ide.md: "Context transfer from CLI to IDE"
+      - handoff/ide-to-cli.md: "Context transfer from IDE to CLI"
+      - handoff/model-switching.md: "Context transfer between AI models"
+      - handoff/context-export-format.md: "Universal context export format specification"
+      - handoff/resume-protocol.md: "Complete resume protocol for zero-context-loss"
+      - skills/skill-index.md: "All capabilities organized by category"
+      - skills/ai-model-guide.md: "Manual AI model selection guidance"
+      - state/current-task.md: "Active task tracking template"
+      - state/task-history.md: "Chronological completed task log"
+      - state/last-action.md: "Primary resume checkpoint"
+      - state/progress-snapshot.md: "Phase summary and completion status"
 
 resources:
   description: "Public resource catalogs"
@@ -59,29 +129,64 @@ resources:
   ai:
     description: "Free AI model directory"
     path: resources/ai/
-    items: []
+    items:
+      - README.md: "Free AI model catalog overview"
 
   integrations:
     description: "AI coding assistant integration guides"
     path: resources/integrations/
-    items: []
+    items:
+      - README.md: "Integrations overview"
+      - opencode.md: "OpenCode CLI integration guide"
 
   examples:
     description: "Example projects and usage patterns"
     path: resources/examples/
-    items: []
+    items:
+      - README.md: "Examples overview"
 
   community:
     description: "Community resources and free tool catalogs"
     path: resources/community/
-    items: []
+    items:
+      - README.md: "Community resources overview"
 
 documentation:
   description: "Public project documentation"
   path: docs/
-  documents: []
+  documents:
+    - AI_DIRECTORY.md: "Directory of AI coding assistants"
+    - ARCHITECTURE.md: "System architecture documentation"
+    - CODE_OF_CONDUCT.md: "Code of conduct"
+    - COMMUNITY.md: "Community guidelines"
+    - COMPANY_MODEL.md: "Company model explanation"
+    - CONTRIBUTING.md: "Contribution guidelines"
+    - CORE_CONCEPTS.md: "Core framework concepts"
+    - DEPARTMENTS.md: "Department definitions"
+    - DESIGN_PRINCIPLES.md: "Design principles"
+    - ENGINEERING_ROLES.md: "Engineering role definitions"
+    - FAQ.md: "Frequently asked questions"
+    - FREE_FOREVER.md: "Free Forever commitment"
+    - FREE_MODELS.md: "Free AI model catalog"
+    - GLOSSARY.md: "Glossary of framework terms"
+    - INTEGRATIONS.md: "Integration guides"
+    - MISSION.md: "Project mission"
+    - MODEL_SELECTION_GUIDE.md: "Model selection guidance"
+    - PHILOSOPHY.md: "Project philosophy"
+    - README.md: "Documentation index"
+    - REPOSITORY_STRUCTURE.md: "Repository structure explanation"
+    - RESPONSIBILITIES.md: "Role responsibilities"
+    - ROADMAP.md: "Project roadmap"
+    - RULES.md: "Framework rules"
+    - SKILLS.md: "Skill definitions"
+    - TEMPLATES.md: "Template documentation"
+    - VISION.md: "Project vision"
+    - WORKFLOW_OVERVIEW.md: "Workflow overview"
+    - architecture.md: "System architecture overview"
+    - demo-script.md: "Hackathon demo script"
+    - pitch.md: "One-page elevator pitch"
 
 release:
-  version: ""
-  date: ""
-  changelog: ""
+  version: "0.3.0"
+  date: "2026-06-28"
+  changelog: "CHANGELOG.md"

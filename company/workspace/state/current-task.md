@@ -2,39 +2,30 @@
 
 ## Status
 
-- **Phase:** Not started
-- **Task:** None assigned
-- **State:** Idle — waiting for new task
+- **Phase:** Structural gap fixes (execution layer)
+- **Task:** Populate company/assets/, .memory/, .summaries/, onboarding quick-start, OpenCode integration, foundation.yaml, validate.sh
+- **State:** In progress
 
 ## Objective
 
-_Describe what is currently being worked on._
+Fix the structural gaps identified in the system analysis: create asset templates, memory/summary directories with examples, onboarding quick-start, OpenCode integration guide, populate foundation.yaml file listings, and create a validation script.
 
 ## Focus area
 
-_Identify the department, role, or domain currently active._
+Execution layer — assets, tooling, onboarding
 
 ## Started
 
-_Date and time the current task began._
+2026-06-28
 
 ## Estimated completion
 
-_Expected end date or milestone._
+2026-06-28
 
 ## Blockers
 
-_List any blockers preventing progress. If none, state "none"._
+None
 
 ## Next action
 
-_The very next step to take when work resumes._
-
----
-
-## How to use this file
-
-- **Start of a task:** Fill in all fields before beginning work.
-- **During a task:** Update blockers and next action as they change.
-- **End of a task:** Copy relevant content to `task-history.md`, set status to "Complete", and clear fields for the next task.
-- **Resuming work:** Read this file first to understand where you left off. Then read `last-action.md` for the exact last step taken.
+Complete remaining state updates and commit all changes.
