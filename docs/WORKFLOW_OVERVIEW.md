@@ -234,4 +234,4 @@ For a small hackathon project, a single workflow may cover the entire project. F
 
 The workflow structure does not change with project size. The same phases apply whether the task is building a button or designing the entire system.
 
-For the company model that defines the roles executing these workflows, see [COMPANY_MODEL.md](./COMPANY_MODEL.md). For the detailed responsibilities of each role, see [RESPONSIBILITIES.md](./RESPONSIBILITIES.md). For reusable workflow definitions, see `.workflows/`.
+For the company model that defines the roles executing these workflows, see [COMPANY_MODEL.md](./COMPANY_MODEL.md). For the detailed responsibilities of each role, see [RESPONSIBILITIES.md](./RESPONSIBILITIES.md). For role-specific skills, deliverables, and examples, see [ENGINEERING_ROLES.md](./ENGINEERING_ROLES.md). For reusable workflow definitions, see `.workflows/`.

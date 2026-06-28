@@ -25,7 +25,7 @@ This document defines the responsibilities of every role in the Hackathon Founda
 
 **Interacts with:** All engineering roles, Product Manager
 
-**Rules:** `.rules/` (all applicable)
+**Rules:** `.rules/` (all applicable). See [RULES.md](./RULES.md) for how rules work.
 
 ---
 
@@ -50,7 +50,7 @@ This document defines the responsibilities of every role in the Hackathon Founda
 
 **Interacts with:** UI/UX Designer, API Engineer, Backend Engineer, QA Engineer
 
-**Rules:** `.rules/react.md`, `.rules/typescript.md`, `.rules/tailwind.md`, `.rules/testing.md`
+**Rules:** `.rules/react.md`, `.rules/typescript.md`, `.rules/tailwind.md`, `.rules/testing.md`. See [RULES.md](./RULES.md) for how rules work.
 
 ---
 
@@ -417,4 +417,4 @@ flowchart TD
     PM --> CEO
 ```
 
-For the department structure that organizes these roles, see [DEPARTMENTS.md](./DEPARTMENTS.md). For how these roles execute work together, see [WORKFLOW_OVERVIEW.md](./WORKFLOW_OVERVIEW.md).
+For the department structure that organizes these roles, see [DEPARTMENTS.md](./DEPARTMENTS.md). For role-specific skills, deliverables, and examples, see [ENGINEERING_ROLES.md](./ENGINEERING_ROLES.md). For how these roles execute work together, see [WORKFLOW_OVERVIEW.md](./WORKFLOW_OVERVIEW.md).

@@ -224,4 +224,4 @@ Each department has clear boundaries:
 
 Cross-department communication flows through the CEO, not directly between departments. This ensures the CEO maintains visibility and control.
 
-For the full company model that explains how departments fit into the organization, see [COMPANY_MODEL.md](./COMPANY_MODEL.md). For detailed role responsibilities, see [RESPONSIBILITIES.md](./RESPONSIBILITIES.md).
+For the full company model that explains how departments fit into the organization, see [COMPANY_MODEL.md](./COMPANY_MODEL.md). For detailed role responsibilities, see [RESPONSIBILITIES.md](./RESPONSIBILITIES.md). For role-specific skills, deliverables, and examples, see [ENGINEERING_ROLES.md](./ENGINEERING_ROLES.md).

@@ -89,7 +89,7 @@ Hackathon-foundation/
 
 **Why it exists:** Different AI models produce different code styles. Rules enforce consistency — in formatting, naming, architecture, and behavior — regardless of which AI is used.
 
-**Relationship to other folders:** Rules apply to `.agents/` (each agent must follow them), `.skills/` (skills must produce output consistent with rules), and `.workflows/` (workflows check rules at review steps).
+**Relationship to other folders:** Rules apply to `.agents/` (each agent must follow them), `.skills/` (skills must produce output consistent with rules), and `.workflows/` (workflows check rules at review steps). For a detailed explanation of how rules work, see [RULES.md](../docs/RULES.md).
 
 **Structure:**
 ```
@@ -113,7 +113,7 @@ Hackathon-foundation/
 
 **Why it exists:** Without skills, every agent reinvents how to perform common tasks. Skills encode best practices once and make them available to any role.
 
-**Relationship to other folders:** Skills reference `.context/` for standards and `.rules/` for constraints. Agents select skills from this directory. Skills can be composed within `.workflows/`.
+**Relationship to other folders:** Skills reference `.context/` for standards and `.rules/` for constraints. Agents select skills from this directory. Skills can be composed within `.workflows/`. For a detailed explanation of how skills work, see [SKILLS.md](../docs/SKILLS.md).
 
 **Structure:**
 ```
@@ -223,7 +223,7 @@ Hackathon-foundation/
 
 **Why it exists:** Templates ensure consistency. They also save time — instead of deciding the structure of a file, the user and AI fill in a pre-approved format.
 
-**Relationship to other folders:** Templates are consumed by `.agents/` (agents fill them in) and referenced by `.workflows/` (workflows specify which template to use at each step).
+**Relationship to other folders:** Templates are consumed by `.agents/` (agents fill them in) and referenced by `.workflows/` (workflows specify which template to use at each step). For a detailed explanation of each template and when to use it, see [TEMPLATES.md](../docs/TEMPLATES.md).
 
 **Structure:**
 ```
@@ -359,6 +359,8 @@ The repository uses folders instead of a flat file structure because:
 4. **AI readability.** When an AI lists the top-level directory, it gets a clean overview of the entire system. This is far more useful than a flat list of 50+ files.
 
 ## Long-term maintenance
+
+For the contribution workflow for adding new content to this structure, see [CONTRIBUTING.md](../docs/CONTRIBUTING.md).
 
 The structure is designed to be maintained over years:
 

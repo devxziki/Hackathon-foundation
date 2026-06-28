@@ -137,6 +137,8 @@ flowchart LR
 
 The repository grows by adding more of the same kind of thing — more roles, more skills, more templates — not by adding new structural layers.
 
+For detailed explanations of how rules and skills work within this architecture, see [RULES.md](./RULES.md) and [SKILLS.md](./SKILLS.md).
+
 ## How AI should use the repository
 
 An AI coding assistant should never read the entire repository. It should receive only what is relevant to the current task.
@@ -154,6 +156,8 @@ The intended usage pattern:
 ```
 
 The AI should be told *who it is* (the role), *what it knows* (context), *how it behaves* (rules), *what it does* (workflow), and *what to produce* (template). The repository architecture is designed to make each of these retrievable independently.
+
+For how different AI coding assistants consume this content, see [INTEGRATIONS.md](./INTEGRATIONS.md).
 
 ## Long-term maintenance
 
