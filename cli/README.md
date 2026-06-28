@@ -6,7 +6,7 @@ Set up AI context continuity in any project with one command.
 
 ```
 cd your-project
-npx foundation-ai@0.5.2 init
+npx foundation-ai@latest init
 ```
 
 No global install. No config. Works immediately.
@@ -15,9 +15,9 @@ No global install. No config. Works immediately.
 
 | Command | Description |
 |---|---|
-| `npx foundation-ai@0.5.2 init` | Set up Foundation in current folder |
-| `npx foundation-ai@0.5.2 status` | See current AI session state |
-| `npx foundation-ai@0.5.2 resume` | Get paste-ready context for any AI tool |
+| `npx foundation-ai@latest init` | Set up Foundation in current folder |
+| `npx foundation-ai@latest status` | See current AI session state |
+| `npx foundation-ai@latest resume` | Get paste-ready context for any AI tool |
 
 ## What gets created
 
