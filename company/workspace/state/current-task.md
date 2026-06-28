@@ -2,17 +2,17 @@
 
 ## Status
 
-- **Phase:** Universal AI tool compatibility layer
-- **Task:** Create UNIVERSAL.md, 3 tool-specific integration guides, session scripts, existing-project onboarding, foundation.yaml + validate.sh updates
+- **Phase:** Resource population
+- **Task:** Populate resources/ai/ with free model catalog
 - **State:** Complete
 
 ## Objective
 
-Build a universal AI tool compatibility layer so any AI tool — named or unnamed — can use Hackathon Foundation without tool-specific configuration. Includes the universal session contract, tool category matrix, unknown tool protocol, context size adaptation, and per-tool guides for Antigravity CLI, Cursor IDE, and VS Code.
+Populate the `resources/ai/` directory with a comprehensive free model catalog covering 12 models with profiles, comparison table, capability matrix, and selection guidance by task type.
 
 ## Focus area
 
-Integrations, scripts, onboarding
+AI resource directory
 
 ## Started
 
@@ -28,4 +28,4 @@ None
 
 ## Next action
 
-Awaiting next task from CEO.
+Populate `company/assets/` with reusable skills or `resources/examples/` with more examples.

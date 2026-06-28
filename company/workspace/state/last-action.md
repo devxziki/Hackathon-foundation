@@ -6,28 +6,28 @@ This is the primary resume checkpoint. It records the last step taken so any AI 
 
 ## Last executed action
 
-- **Action:** Created universal AI tool compatibility layer — UNIVERSAL.md, antigravity.md, cursor.md, vscode.md, start-session.sh, end-session.sh, existing-project.md, foundation.yaml v0.4.0, validate.sh checks 9/10/11, .gitignore updates
+- **Action:** Created resources/ai/catalog.md — 12 model profiles, comparison table, capability matrix, selection guide
 - **Timestamp:** 2026-06-28
-- **Session:** Universal AI tool compatibility layer
+- **Session:** Resource population — AI catalog
 
 ## Last modified file
 
-- **File:** scripts/validate.sh
-- **Change:** Added Check 9 (integration files), Check 10 (session scripts), Check 11 (.gitignore entries)
+- **File:** foundation.yaml
+- **Change:** Added catalog.md to AI resources section
 - **Commit:** Pending
 
 ## Last decision made
 
-- **Decision:** Use stat -c %Y for Linux and stat -f %m for macOS in end-session.sh to support both platforms
-- **Rationale:** Hackathon Foundation is tool-agnostic and platform-agnostic. The session script must work on both Linux and macOS without modification.
-- **Alternatives considered:** Requiring a specific platform — rejected because it violates the universal portability principle.
+- **Decision:** Use a single catalog.md rather than one file per model
+- **Rationale:** 12 individual model files would be excessive navigation; a single catalog with embedded profiles, comparison table, and selection matrix is more discoverable and searchable
+- **Alternatives considered:** One file per model — rejected in favor of unified catalog for better usability
 
 ## Next expected action
 
-- **Action:** Run scripts/validate.sh to confirm all checks pass, then commit and push all changes
+- **Action:** Populate company/assets/ with reusable skills or resources/examples/ with more examples
 - **By whom:** Backend Engineer
-- **Depends on:** All 9 tasks complete
+- **Depends on:** CEO direction
 
 ## Continuity notes
 
-All 9 tasks complete. The universal integration layer means any AI tool can now use this framework. 4 tool-specific guides (OpenCode, Antigravity, Cursor, VS Code) plus the UNIVERSAL guide cover every category. Two session scripts automate context export and clean session ending. Existing-project onboarding makes the framework usable for non-greenfield repositories.
+AI catalog is now populated with 12 models. Next gaps: `company/assets/` needs skills beyond templates, `resources/examples/` needs more usage examples, `resources/community/` is still a stub.

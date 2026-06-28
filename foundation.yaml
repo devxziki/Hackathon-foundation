@@ -132,6 +132,7 @@ resources:
     path: resources/ai/
     items:
       - README.md: "Free AI model catalog overview"
+      - catalog.md: "Free model profiles — 12 models, comparison table, selection guide"
 
   integrations:
     description: "AI coding assistant integration guides"
