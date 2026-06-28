@@ -26,7 +26,7 @@ Hackathon Foundation is a file-based workspace standard. It defines how state, c
 ## Usage
 
 ```
-npx foundation-ai@latest init
+npx foundation-ai@0.5.2 init
 ```
 
 Run that in any project. It scaffolds the full AI context layer — state files, handoff protocols, session scripts, and tool-specific rules. `cd` into your project folder first, then run the command.
@@ -43,7 +43,7 @@ Run that in any project. It scaffolds the full AI context layer — state files,
 
 ```
 cd your-project
-npx foundation-ai@latest init
+npx foundation-ai@0.5.2 init
 ```
 
 Works immediately. No global install needed.
