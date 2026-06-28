@@ -6,28 +6,28 @@ This is the primary resume checkpoint. It records the last step taken so any AI 
 
 ## Last executed action
 
-- **Action:** Created resources/ai/catalog.md — 12 model profiles, comparison table, capability matrix, selection guide
+- **Action:** Built foundation-ai CLI — 14 tasks: package.json, bin/foundation.js, src/index.js, commands/init.js/status.js/resume.js, utils/detect.js/gitContext.js/scaffold.js/printer.js, templates/state/rules/handoff/policies/scripts, cli/README.md, updated root README.md, foundation.yaml v0.5.0
 - **Timestamp:** 2026-06-28
-- **Session:** Resource population — AI catalog
+- **Session:** CLI tool — npx foundation-ai
 
 ## Last modified file
 
 - **File:** foundation.yaml
-- **Change:** Added catalog.md to AI resources section
+- **Change:** Added cli section, bumped to v0.5.0
 - **Commit:** Pending
 
 ## Last decision made
 
-- **Decision:** Use a single catalog.md rather than one file per model
-- **Rationale:** 12 individual model files would be excessive navigation; a single catalog with embedded profiles, comparison table, and selection matrix is more discoverable and searchable
-- **Alternatives considered:** One file per model — rejected in favor of unified catalog for better usability
+- **Decision:** Use ESM-only (type: module) for CLI package
+- **Rationale:** Modern Node.js >= 18 supports ESM natively; avoids CommonJS compatibility issues
+- **Alternatives considered:** Dual CJS/ESM — rejected for simplicity since target is Node >= 18
 
 ## Next expected action
 
-- **Action:** Populate company/assets/ with reusable skills or resources/examples/ with more examples
+- **Action:** Publish foundation-ai to npm, or populate remaining stub directories
 - **By whom:** Backend Engineer
 - **Depends on:** CEO direction
 
 ## Continuity notes
 
-AI catalog is now populated with 12 models. Next gaps: `company/assets/` needs skills beyond templates, `resources/examples/` needs more usage examples, `resources/community/` is still a stub.
+CLI tool complete at cli/. Package name: foundation-ai. Run with: npx foundation-ai@latest init. All 14 tasks from the build spec are implemented. The package ships with templates, handoff protocols, policies, session scripts, and tool-specific rule files (AGENTS.md, .cursorrules, copilot-instructions.md).

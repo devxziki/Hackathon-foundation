@@ -2,17 +2,17 @@
 
 ## Status
 
-- **Phase:** Resource population
-- **Task:** Populate resources/ai/ with free model catalog
+- **Phase:** CLI tool
+- **Task:** Build npx-compatible foundation-ai CLI for scaffolding AI context into any project
 - **State:** Complete
 
 ## Objective
 
-Populate the `resources/ai/` directory with a comprehensive free model catalog covering 12 models with profiles, comparison table, capability matrix, and selection guidance by task type.
+Create an npx CLI tool (`foundation-ai`) that scaffolds the full AI context layer into any project with one command. Includes project detection, template scaffolding, tool-specific rule files, and session scripts.
 
 ## Focus area
 
-AI resource directory
+CLI development
 
 ## Started
 
@@ -28,4 +28,4 @@ None
 
 ## Next action
 
-Populate `company/assets/` with reusable skills or `resources/examples/` with more examples.
+Publish to npm. Or populate remaining stubs: company/assets/ skills, resources/examples/, resources/community/.

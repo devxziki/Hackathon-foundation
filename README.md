@@ -41,7 +41,17 @@ Hackathon Foundation is a file-based workspace standard. It defines how state, c
 - **File-based** — No databases, servers, or runtime dependencies.
 - **Open-source** — MIT license. Fork, adapt, contribute.
 
-## Quick Start
+## Quickstart — any project, one command
+
+```
+cd your-project
+npx foundation-ai@latest init
+```
+
+Works immediately. No global install.
+After init: `bash scripts/start-session.sh` → paste output into any AI tool.
+
+## Full Setup
 
 ```
 git clone https://github.com/devxziki/Hackathon-foundation.git

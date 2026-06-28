@@ -12,8 +12,8 @@ project:
     - devxziki
 
 version:
-  current: 0.4.0
-  schema: 4
+  current: 0.5.0
+  schema: 5
   status: active
 
 philosophy:
@@ -158,6 +158,23 @@ resources:
     items:
       - README.md: "Community resources overview"
 
+cli:
+  description: "npx CLI tool for scaffolding Foundation into any project"
+  path: cli/
+  package: foundation-ai
+  command: "npx foundation-ai@latest init"
+  items:
+    - bin/foundation.js: "CLI entry point"
+    - src/index.js: "Command router"
+    - src/commands/init.js: "Main scaffold command"
+    - src/commands/status.js: "Status display"
+    - src/commands/resume.js: "Context block generator"
+    - src/utils/detect.js: "Project type detection"
+    - src/utils/gitContext.js: "Git history extraction"
+    - src/utils/scaffold.js: "File scaffolding engine"
+    - src/utils/printer.js: "Terminal output"
+    - templates/: "Template files shipped with the package"
+
 documentation:
   description: "Public project documentation"
   path: docs/
@@ -194,6 +211,6 @@ documentation:
     - pitch.md: "One-page elevator pitch"
 
 release:
-  version: "0.4.0"
+  version: "0.5.0"
   date: "2026-06-28"
   changelog: "CHANGELOG.md"
