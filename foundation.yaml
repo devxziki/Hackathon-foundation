@@ -12,8 +12,8 @@ project:
     - devxziki
 
 version:
-  current: 0.5.0
-  schema: 5
+  current: 0.6.0
+  schema: 6
   status: active
 
 philosophy:
@@ -159,12 +159,12 @@ resources:
       - README.md: "Community resources overview"
 
 cli:
-  description: "npx CLI tool for scaffolding Foundation into any project"
-  path: cli/
-  package: foundation-ai
-  command: "npx foundation-ai@latest init"
+  description: "npx CLI tool for scaffolding Vortex AI context layer into any project"
+  path: vortex/
+  package: vortex
+  command: "npx vortex init"
   items:
-    - bin/foundation.js: "CLI entry point"
+    - bin/vortex.js: "CLI entry point"
     - src/index.js: "Command router"
     - src/commands/init.js: "Main scaffold command"
     - src/commands/status.js: "Status display"
@@ -211,6 +211,6 @@ documentation:
     - pitch.md: "One-page elevator pitch"
 
 release:
-  version: "0.5.0"
+  version: "0.6.0"
   date: "2026-06-28"
   changelog: "CHANGELOG.md"

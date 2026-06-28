@@ -2,32 +2,34 @@
 
 ## Purpose
 
-Primary resume checkpoint. Read this file first when resuming any session.
+This is the primary resume checkpoint. It records the last step taken so any AI tool or developer can continue work without losing context. Read this file first when resuming a session.
 
 ## Last executed action
 
-- **Action:** Fixed critical runtime bugs in foundation-ai scaffold.js — 6 bugs resolved: template path resolution (fileURLToPath), skip/created/missing logic, state template variable placeholders, variable defaults, executable chmod, empty-folder support
+- **Action:** Rebranded foundation-ai → Vortex with `.vortex/` containment. Package name: `vortex`, npx command: `npx vortex init`. Scaffold target: `.vortex/` subdirectory. Removed `cli/`, created `vortex/`. All templates and paths updated.
 - **Timestamp:** 2026-06-28
-- **Session:** Session 006 — Bug fix
+- **Session:** CLI rebrand + restructuring
 
 ## Last modified file
 
-- **File:** cli/src/utils/scaffold.js
-- **Change:** Fixed TEMPLATES_DIR to resolve relative to scaffold.js via fileURLToPath+dirname (was incorrectly using import.meta.url directly in path.resolve); added startup directory check; fixed skip vs missing vs created tri-state logic; improved variable defaults for empty/no-git projects; switched chmod to static import; renamed vars→variables and cleaned fillTemplate
+- **File:** foundation.yaml
+- **Change:** Updated to v0.6.0 with vortex section
 - **Commit:** Pending
 
 ## Last decision made
 
-- **Decision:** Resolve templates/ relative to scaffold.js, not process.cwd()
-- **Rationale:** When installed via npx, process.cwd() is the user's project folder, not the package folder. The only reliable anchor is scaffold.js's own location via import.meta.url → fileURLToPath → dirname.
-- **Alternatives considered:** package root from import.meta.resolve — rejected because it's still experimental
+- **Decision:** Package name `vortex`, bin `vortex`, all state files contained in `.vortex/` subdirectory
+- **Rationale:** Clean project root, easy to gitignore, professional brand identity
+- **Alternatives considered:** `foundation-ai` — too long; `fai` — too short; `vm` — conflicts with virtual machine
 
 ## Next expected action
 
-- **Action:** Publish foundation-ai v0.5.2 to npm
+- **Action:** Publish vortex to npm
 - **By whom:** Backend Engineer
-- **Depends on:** CEO direction to publish
+- **Depends on:** GitHub repo up to date
 
 ## Continuity notes
 
-Bugs fixed: (1) import.meta.url was being used as a file path in path.resolve() — replaced with fileURLToPath + dirname + ../../templates; (2) template-missing was lumped into "skipped (already exist)" — now 3 distinct states; (3-4) state/ and rules/ templates now use consistent {{VARIABLE}} placeholders; (5) chmod uses static import; (6) empty/no-git folders work correctly. Version bumped to 0.5.2.
+All files that were in `cli/` are now in `vortex/`. The scaffold target changed from `cwd/company/...` to `cwd/.vortex/state/...`. Root-level rule files (AGENTS.md, .cursorrules, copilot-instructions.md) still go to project root for AI tool auto-discovery, but reference `.vortex/state/` paths.
+
+Session scripts moved from `cwd/scripts/` to `cwd/.vortex/scripts/`. Use `bash .vortex/scripts/start-session.sh` instead of `bash scripts/start-session.sh`.

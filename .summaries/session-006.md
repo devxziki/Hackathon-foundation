@@ -1,40 +1,68 @@
-# Session 006 — Fix foundation-ai runtime bugs
+# Session 006 — 2026-06-28
 
-## Summary
+## Duration
 
-Fixed 6 critical bugs in `foundation-ai` CLI package that caused "template missing" errors at runtime after npm publish.
+15:00 to 15:45
 
-## Bugs fixed
+## Role
 
-1. **Template path resolution** (`cli/src/utils/scaffold.js`): `import.meta.url` was passed directly to `path.resolve()` which expects a file path, not a URL. Replaced with `fileURLToPath(import.meta.url)` + `dirname()` + `../../templates` relative path. Added startup `existsSync` guard.
+CLI Developer, Technical Writer
 
-2. **Skip/created/missing logic**: Template-missing files were incorrectly reported as "Skipped (already exist)". Now 3 distinct states: `created[]`, `skipped[]` (already exists), `missingTemplates[]` (template not found). Warning printed at end if any templates missing.
+## Accomplished
 
-3. **State template placeholders**: Updated `templates/state/last-action.md`, `current-task.md`, `progress-snapshot.md` and `templates/rules/AGENTS.md.tpl`, `cursorrules.tpl`, `copilot-instructions.md.tpl` with full `{{VARIABLE}}` placeholders.
+- Rebranded `foundation-ai` → `vortex` across the entire codebase
+- Restructured scaffold target from `cwd/company/...` → `cwd/.vortex/...`
+- Created `vortex/` directory replacing `cli/`
+- Updated all 14 source files with new package name, binary name, paths, and branding
+- Updated all 14 template files with `.vortex/` paths and Vortex branding
+- Updated script templates with correct relative paths (../.. for .vortex/scripts/)
+- Removed `cli/` directory
+- Updated root README.md — `npx vortex init`
+- Updated `foundation.yaml` to v0.6.0
 
-4. **Variable default values**: Added proper fallbacks (`|| 'unknown'`, `|| 'no git history'`, `|| 'none detected'`) instead of potentially undefined values.
+## Files created
 
-5. **Executable chmod**: Switched `chmodSync` from dynamic `await import('node:fs')` to static top-level import.
+- `vortex/package.json`
+- `vortex/bin/vortex.js`
+- `vortex/README.md`
+- `vortex/src/index.js`
+- `vortex/src/commands/init.js`
+- `vortex/src/commands/status.js`
+- `vortex/src/commands/resume.js`
+- `vortex/src/utils/detect.js`
+- `vortex/src/utils/gitContext.js`
+- `vortex/src/utils/scaffold.js`
+- `vortex/src/utils/printer.js`
+- `vortex/templates/state/last-action.md`
+- `vortex/templates/state/current-task.md`
+- `vortex/templates/state/progress-snapshot.md`
+- `vortex/templates/rules/AGENTS.md.tpl`
+- `vortex/templates/rules/cursorrules.tpl`
+- `vortex/templates/rules/copilot-instructions.md.tpl`
+- `vortex/templates/handoff/resume-protocol.md`
+- `vortex/templates/handoff/model-switching.md`
+- `vortex/templates/handoff/cli-to-ide.md`
+- `vortex/templates/handoff/ide-to-cli.md`
+- `vortex/templates/handoff/context-export-format.md`
+- `vortex/templates/policies/execution-policy.md`
+- `vortex/templates/scripts/start-session.sh`
+- `vortex/templates/scripts/end-session.sh`
 
-6. **Empty/no-git projects**: Ensured scaffold works correctly when `dirs` is empty or `gitContext` has no git.
+## Files deleted
 
-## Files changed
+- `cli/` (entire directory — 30 files)
 
-- `cli/src/utils/scaffold.js` — Major rewrite of path resolution, variable map, skip/missing logic
-- `cli/src/utils/printer.js` — Added `missingTemplates` parameter to `printSuccess`
-- `cli/src/commands/init.js` — Pass `result.missingTemplates` to `printSuccess`
-- `cli/templates/state/last-action.md` — Full rewrite with {{VARIABLE}} placeholders
-- `cli/templates/state/current-task.md` — Full rewrite with {{VARIABLE}} placeholders
-- `cli/templates/state/progress-snapshot.md` — Full rewrite with {{VARIABLE}} placeholders
-- `cli/templates/rules/AGENTS.md.tpl` — Expanded with project/session details
-- `cli/templates/rules/cursorrules.tpl` — Expanded with project context
-- `cli/templates/rules/copilot-instructions.md.tpl` — Expanded with key dirs
-- `cli/package.json` — `0.5.1` → `0.5.2`
-- `company/workspace/state/last-action.md` — Updated with this session
-- `.summaries/session-006.md` — Created
+## Decisions made
 
-## Verification
+- Package name: `vortex`, not `foundation-ai` or any abbreviation
+- All scaffolded state/handoff/policies/scripts go inside `.vortex/` for a clean project root
+- Rule files (AGENTS.md, .cursorrules, copilot-instructions.md) stay at root for AI tool auto-discovery
 
-- `find cli/templates -type f | sort` — All 13 template files present
-- Path resolution test: `TEMPLATES_DIR` correctly resolves to `cli/templates/`
-- Version bumped to `0.5.2`
+## Blockers or issues
+
+- None
+
+## Next session
+
+- Publish `vortex` to npm
+- Build the admin dashboard

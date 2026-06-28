@@ -1,6 +1,6 @@
 # Hackathon Foundation
 
-An open-source, AI-native workspace standard that solves AI context loss across CLI, IDE, and chat tools.
+An open-source, AI-native workspace standard that solves AI context loss across CLI, IDE, and chat tools. Powered by [Vortex](https://www.npmjs.com/package/vortex) — `npx vortex init`.
 
 ## The Problem
 
@@ -26,10 +26,10 @@ Hackathon Foundation is a file-based workspace standard. It defines how state, c
 ## Usage
 
 ```
-npx foundation-ai@latest init
+npx vortex init
 ```
 
-Run that in any project. It scaffolds the full AI context layer — state files, handoff protocols, session scripts, and tool-specific rules. `cd` into your project folder first, then run the command.
+Run that in any project. It scaffolds the full AI context layer inside `.vortex/` — state files, handoff protocols, session scripts, and tool-specific rules. `cd` into your project folder first, then run the command.
 
 ## Usage Flow
 
@@ -43,11 +43,11 @@ Run that in any project. It scaffolds the full AI context layer — state files,
 
 ```
 cd your-project
-npx foundation-ai@latest init
+npx vortex init
 ```
 
 Works immediately. No global install needed.
-After init: `bash scripts/start-session.sh` → paste the output into any AI tool.
+After init: `bash .vortex/scripts/start-session.sh` → paste the output into any AI tool.
 
 ## Full Setup (from this repo)
 
