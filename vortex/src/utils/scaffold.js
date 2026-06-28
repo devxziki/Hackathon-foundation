@@ -3,9 +3,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import fs from 'fs-extra';
 
-function TEMPLATE_DIR(base) {
-  return path.resolve(path.dirname(fileURLToPath(base)), '../templates');
-}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const TEMPLATES = path.resolve(__dirname, '../../templates');
 
 export async function scaffold(cwd, projectInfo, gitContext) {
   const created = [];
@@ -23,7 +23,7 @@ export async function scaffold(cwd, projectInfo, gitContext) {
     '{{FILE_COUNT}}': String(projectInfo.totalFiles || 0)
   };
 
-  const templateDir = TEMPLATE_DIR(import.meta.url);
+  const templateDir = TEMPLATES;
   const vortexDir = path.join(cwd, '.vortex');
 
   const dirs = [
@@ -36,6 +36,7 @@ export async function scaffold(cwd, projectInfo, gitContext) {
   for (const dir of dirs) {
     await fs.ensureDir(path.join(vortexDir, dir));
   }
+  await fs.ensureDir(path.join(cwd, '.github'));
 
   const fileMap = [
     { src: 'state/last-action.md', dest: '.vortex/state/last-action.md' },
