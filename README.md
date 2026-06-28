@@ -1,65 +1,56 @@
 # Hackathon Foundation
 
-**An AI-native software engineering framework for building better hackathon projects.**
+An open-source, AI-native workspace standard that solves AI context loss across CLI, IDE, and chat tools.
 
-Hackathon Foundation is a free, open-source, AI-agnostic engineering framework that helps students and developers build hackathon projects faster by organizing AI coding assistants through structured roles, shared context, rules, skills, templates, and workflows.
+## The Problem
 
-The repository is the company. The user is the CEO. AI assistants act as employees.
+AI tools lose context every time you switch sessions, models, or environments. You explain your project again and again. Progress is fragmented. Context is trapped in the tool that created it.
 
-## Philosophy
+**Hackathon Foundation makes AI context portable.**
 
-- **Free Forever.** Every tool, model, and resource referenced is free to use.
-- **AI-Agnostic.** Works with any AI coding assistant — OpenCode, Gemini CLI, Continue, Cline, Roo Code, VS Code Copilot, and more.
-- **Modular.** Adopt only what you need. Roles, rules, skills, and templates are independently usable.
-- **Beginner-Friendly.** Simple enough for a first-time hackathon participant. Rigorous enough for a seasoned engineer.
+## What It Is
 
-## Repository Structure
+Hackathon Foundation is a file-based workspace standard. It defines how state, context, handoffs, skills, policies, roles, and departments are structured so any AI tool or developer can pick up where another left off — instantly.
+
+| Module | What it does |
+|---|---|
+| `company/handbook/` | Mission, culture, principles, definition of done |
+| `company/departments/` | Functional areas: engineering, design, qa, docs, ops, research |
+| `company/roles/` | Role definitions: backend, frontend, architect, tester, etc. |
+| `company/policies/` | Enforceable governance: execution, review, security, communication |
+| `company/assets/` | Reusable templates, skills, workflows, checklists |
+| `company/workspace/skills/` | Skill index and AI model selection guide |
+| `company/workspace/state/` | Current task, last action, task history, progress snapshot |
+| `company/workspace/handoff/` | Context transfer protocols for CLI ↔ IDE ↔ model switches |
+
+## Usage Flow
 
 ```
-Hackathon-foundation/
-│
-├── company/          The internal software company
-│   ├── handbook/     Shared knowledge, standards, and conventions
-│   ├── departments/  Engineering departments and role definitions
-│   ├── policies/     Rules, constraints, and quality gates
-│   ├── assets/       Reusable templates, skills, and workflows
-│   └── onboarding/   Guides for new users and AI assistants
-│
-├── resources/        Public resource catalogs
-│   ├── ai/           Free AI model directory
-│   ├── integrations/ AI coding assistant integration guides
-│   ├── examples/     Example projects and usage patterns
-│   └── community/    Community resources and free tool lists
-│
-├── docs/             Public project documentation
-├── scripts/          Utility scripts
-│
-├── README.md
-├── LICENSE
-├── .gitignore
-├── .editorconfig
-├── .gitattributes
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── SECURITY.md
-├── CHANGELOG.md
-└── foundation.yaml
+1. Start → Read state files → Know what to do
+2. Execute → Follow policies → Use assets
+3. Record → Update state files → Log decisions
+4. Handoff → Export context → Switch tools/models
+5. Resume → Import context → Continue without loss
 ```
+
+## Key Properties
+
+- **Model-agnostic** — Works with any AI. No model-specific configuration.
+- **Tool-agnostic** — Works in CLI, VS Code, Cursor, JetBrains, chat UIs.
+- **Free Forever** — No paid models, APIs, or services required.
+- **File-based** — No databases, servers, or runtime dependencies.
+- **Open-source** — MIT license. Fork, adapt, contribute.
 
 ## Quick Start
 
-1. Clone the repository.
-2. Read `docs/README.md` for the documentation index.
-3. Read `company/handbook/` for shared context and standards.
-4. Explore `company/departments/` for role definitions.
-5. Use `company/assets/` for templates, skills, and workflows.
-6. Apply `company/policies/` for rules and quality gates.
-7. Select models from `resources/ai/` and tools from `resources/integrations/`.
+```
+git clone https://github.com/devxziki/Hackathon-foundation.git
+cd Hackathon-foundation
+cat company/workspace/state/progress-snapshot.md
+```
 
-## Documentation
-
-All documentation lives in `docs/`. See `docs/README.md` for the complete index.
+Read the resume protocol at `company/workspace/handoff/resume-protocol.md` to begin working.
 
 ## License
 
-MIT License. See LICENSE.
+MIT
