@@ -9,7 +9,7 @@ export async function status() {
   if (!existsSync(path.join(stateDir, 'last-action.md'))) {
     printBanner();
     printError('Vortex is not set up in this directory.');
-    console.log('  Run: ' + 'npx vortex init'.cyan + '\n');
+    console.log('  Run: ' + 'npx dev-vortex init'.cyan + '\n');
     return;
   }
 

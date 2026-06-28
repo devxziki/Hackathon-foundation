@@ -161,8 +161,8 @@ resources:
 cli:
   description: "npx CLI tool for scaffolding Vortex AI context layer into any project"
   path: vortex/
-  package: vortex
-  command: "npx vortex init"
+  package: dev-vortex
+  command: "npx dev-vortex init"
   items:
     - bin/vortex.js: "CLI entry point"
     - src/index.js: "Command router"

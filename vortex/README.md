@@ -6,7 +6,7 @@ AI context continuity for any project — one command, zero config.
 
 ```
 cd your-project
-npx vortex init
+npx dev-vortex init
 ```
 
 No global install. Works immediately.
@@ -15,9 +15,9 @@ No global install. Works immediately.
 
 | Command | Description |
 |---|---|
-| `npx vortex init` | Set up Vortex AI context layer in current folder |
-| `npx vortex status` | Show current AI session state |
-| `npx vortex resume` | Get paste-ready context for any AI tool |
+| `npx dev-vortex init` | Set up Vortex AI context layer in current folder |
+| `npx dev-vortex status` | Show current AI session state |
+| `npx dev-vortex resume` | Get paste-ready context for any AI tool |
 
 ## What gets created
 

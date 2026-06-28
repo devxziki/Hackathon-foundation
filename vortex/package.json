@@ -1,9 +1,9 @@
 {
-  "name": "vortex",
+  "name": "dev-vortex",
   "version": "1.0.0",
   "description": "AI context continuity for any project — OpenCode, Claude Code, Cursor, VS Code, Antigravity, or any AI tool. Run with npx, no global install needed.",
   "bin": {
-    "vortex": "./bin/vortex.js"
+    "dev-vortex": "./bin/vortex.js"
   },
   "type": "module",
   "engines": { "node": ">=18" },

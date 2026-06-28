@@ -12,7 +12,7 @@ export async function resume() {
 
   if (!existsSync(lastActionFile)) {
     printError('Vortex is not set up in this directory.');
-    console.log('  Run: ' + kleur.cyan('npx vortex init') + '\n');
+    console.log('  Run: ' + kleur.cyan('npx dev-vortex init') + '\n');
     return;
   }
 

@@ -44,9 +44,9 @@ function printUsage() {
   vortex — AI context scaffolding for any project
 
   Usage:
-    npx vortex init       Set up Vortex in current folder
-    npx vortex status     Show current AI session state
-    npx vortex resume     Print paste-ready context for any AI tool
+    npx dev-vortex init       Set up Vortex in current folder
+    npx dev-vortex status     Show current AI session state
+    npx dev-vortex resume     Print paste-ready context for any AI tool
 
   Works with: OpenCode · Cursor · VS Code · Claude Code · Antigravity · any AI CLI
 `);

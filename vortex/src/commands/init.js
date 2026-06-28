@@ -15,7 +15,7 @@ export async function init() {
   const stateFile = path.join(cwd, '.vortex/state/last-action.md');
   if (existsSync(stateFile)) {
     console.log('  ✓ Vortex already set up here.\n');
-    console.log('  Run: ' + 'npx vortex status'.cyan + '\n');
+    console.log('  Run: ' + 'npx dev-vortex status'.cyan + '\n');
     return;
   }
 
