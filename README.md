@@ -23,17 +23,15 @@ Hackathon Foundation is a file-based workspace standard. It defines how state, c
 | `company/workspace/state/` | Current task, last action, task history, progress snapshot |
 | `company/workspace/handoff/` | Context transfer protocols for CLI ↔ IDE ↔ model switches |
 
+## Usage
+
+```
+npx foundation-ai@latest init
+```
+
+Run that in any project. It scaffolds the full AI context layer — state files, handoff protocols, session scripts, and tool-specific rules. `cd` into your project folder first, then run the command.
+
 ## Usage Flow
-
-```
-1. Start → Read state files → Know what to do
-2. Execute → Follow policies → Use assets
-3. Record → Update state files → Log decisions
-4. Handoff → Export context → Switch tools/models
-5. Resume → Import context → Continue without loss
-```
-
-## Key Properties
 
 - **Model-agnostic** — Works with any AI. No model-specific configuration.
 - **Tool-agnostic** — Works in CLI, VS Code, Cursor, JetBrains, chat UIs.
@@ -41,17 +39,17 @@ Hackathon Foundation is a file-based workspace standard. It defines how state, c
 - **File-based** — No databases, servers, or runtime dependencies.
 - **Open-source** — MIT license. Fork, adapt, contribute.
 
-## Quickstart — any project, one command
+## Quickstart — set up AI context in any project
 
 ```
 cd your-project
 npx foundation-ai@latest init
 ```
 
-Works immediately. No global install.
-After init: `bash scripts/start-session.sh` → paste output into any AI tool.
+Works immediately. No global install needed.
+After init: `bash scripts/start-session.sh` → paste the output into any AI tool.
 
-## Full Setup
+## Full Setup (from this repo)
 
 ```
 git clone https://github.com/devxziki/Hackathon-foundation.git
