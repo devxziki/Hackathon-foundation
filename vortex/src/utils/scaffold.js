@@ -1,9 +1,10 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import fs from 'fs-extra';
 
 function TEMPLATE_DIR(base) {
-  return path.resolve(base, '../templates');
+  return path.resolve(path.dirname(fileURLToPath(base)), '../templates');
 }
 
 export async function scaffold(cwd, projectInfo, gitContext) {

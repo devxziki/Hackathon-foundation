@@ -1,6 +1,5 @@
-import { existsSync, readFileSync, appendFileSync } from 'node:fs';
+import { existsSync, readFileSync, appendFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { createRequire } from 'node:module';
 import prompts from 'prompts';
 import { detectProject } from '../utils/detect.js';
 import { getGitContext } from '../utils/gitContext.js';
