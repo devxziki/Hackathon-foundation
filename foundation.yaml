@@ -1,0 +1,87 @@
+# Hackathon Foundation — Foundation Manifest
+# Version: 0.2.0
+# This manifest defines the schema of the repository structure.
+# Sections will be populated in future phases.
+
+project:
+  name: Hackathon Foundation
+  description: "An AI-native software engineering framework for building better hackathon projects."
+  repository: ""
+  license: MIT
+  created: ""
+  maintainers: []
+
+version:
+  current: 0.2.0
+  schema: 2
+  status: foundation
+
+philosophy:
+  free_forever: true
+  ai_agnostic: true
+  modular: true
+  beginner_friendly: true
+  professionally_organized: true
+
+company:
+  description: "The internal software company"
+  path: company/
+
+  handbook:
+    description: "Shared knowledge, standards, and conventions"
+    path: company/handbook/
+    items: []
+
+  departments:
+    description: "Engineering departments and role definitions"
+    path: company/departments/
+    items: []
+
+  policies:
+    description: "Rules, constraints, and quality gates"
+    path: company/policies/
+    items: []
+
+  assets:
+    description: "Reusable templates, skills, and workflows"
+    path: company/assets/
+    items: []
+
+  onboarding:
+    description: "Guides for new users and AI assistants"
+    path: company/onboarding/
+    items: []
+
+resources:
+  description: "Public resource catalogs"
+  path: resources/
+
+  ai:
+    description: "Free AI model directory"
+    path: resources/ai/
+    items: []
+
+  integrations:
+    description: "AI coding assistant integration guides"
+    path: resources/integrations/
+    items: []
+
+  examples:
+    description: "Example projects and usage patterns"
+    path: resources/examples/
+    items: []
+
+  community:
+    description: "Community resources and free tool catalogs"
+    path: resources/community/
+    items: []
+
+documentation:
+  description: "Public project documentation"
+  path: docs/
+  documents: []
+
+release:
+  version: ""
+  date: ""
+  changelog: ""
