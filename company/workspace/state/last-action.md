@@ -2,32 +2,32 @@
 
 ## Purpose
 
-This is the primary resume checkpoint. It records the last step taken so any AI tool or developer can continue work without losing context. Read this file first when resuming a session.
+Primary resume checkpoint. Read this file first when resuming any session.
 
 ## Last executed action
 
-- **Action:** Built foundation-ai CLI — 14 tasks: package.json, bin/foundation.js, src/index.js, commands/init.js/status.js/resume.js, utils/detect.js/gitContext.js/scaffold.js/printer.js, templates/state/rules/handoff/policies/scripts, cli/README.md, updated root README.md, foundation.yaml v0.5.0
+- **Action:** Fixed critical runtime bugs in foundation-ai scaffold.js — 6 bugs resolved: template path resolution (fileURLToPath), skip/created/missing logic, state template variable placeholders, variable defaults, executable chmod, empty-folder support
 - **Timestamp:** 2026-06-28
-- **Session:** CLI tool — npx foundation-ai
+- **Session:** Session 006 — Bug fix
 
 ## Last modified file
 
-- **File:** foundation.yaml
-- **Change:** Added cli section, bumped to v0.5.0
+- **File:** cli/src/utils/scaffold.js
+- **Change:** Fixed TEMPLATES_DIR to resolve relative to scaffold.js via fileURLToPath+dirname (was incorrectly using import.meta.url directly in path.resolve); added startup directory check; fixed skip vs missing vs created tri-state logic; improved variable defaults for empty/no-git projects; switched chmod to static import; renamed vars→variables and cleaned fillTemplate
 - **Commit:** Pending
 
 ## Last decision made
 
-- **Decision:** Use ESM-only (type: module) for CLI package
-- **Rationale:** Modern Node.js >= 18 supports ESM natively; avoids CommonJS compatibility issues
-- **Alternatives considered:** Dual CJS/ESM — rejected for simplicity since target is Node >= 18
+- **Decision:** Resolve templates/ relative to scaffold.js, not process.cwd()
+- **Rationale:** When installed via npx, process.cwd() is the user's project folder, not the package folder. The only reliable anchor is scaffold.js's own location via import.meta.url → fileURLToPath → dirname.
+- **Alternatives considered:** package root from import.meta.resolve — rejected because it's still experimental
 
 ## Next expected action
 
-- **Action:** Publish foundation-ai to npm, or populate remaining stub directories
+- **Action:** Publish foundation-ai v0.5.2 to npm
 - **By whom:** Backend Engineer
-- **Depends on:** CEO direction
+- **Depends on:** CEO direction to publish
 
 ## Continuity notes
 
-CLI tool complete at cli/. Package name: foundation-ai. Run with: npx foundation-ai@latest init. All 14 tasks from the build spec are implemented. The package ships with templates, handoff protocols, policies, session scripts, and tool-specific rule files (AGENTS.md, .cursorrules, copilot-instructions.md).
+Bugs fixed: (1) import.meta.url was being used as a file path in path.resolve() — replaced with fileURLToPath + dirname + ../../templates; (2) template-missing was lumped into "skipped (already exist)" — now 3 distinct states; (3-4) state/ and rules/ templates now use consistent {{VARIABLE}} placeholders; (5) chmod uses static import; (6) empty/no-git folders work correctly. Version bumped to 0.5.2.

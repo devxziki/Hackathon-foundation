@@ -1,28 +1,33 @@
-import { existsSync, readFileSync, writeFileSync, appendFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, chmodSync } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import fs from 'fs-extra';
 
-function TEMPLATE_DIR(base) {
-  return path.resolve(base, '../templates');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const TEMPLATES_DIR = path.join(__dirname, '..', '..', 'templates');
+
+if (!existsSync(TEMPLATES_DIR)) {
+  console.error('Fatal: templates directory not found at', TEMPLATES_DIR);
+  process.exit(1);
 }
 
 export async function scaffold(cwd, projectInfo, gitContext) {
   const created = [];
   const skipped = [];
+  const missingTemplates = [];
 
-  const vars = {
-    '{{PROJECT_NAME}}': projectInfo.name,
-    '{{PROJECT_TYPE}}': projectInfo.type,
-    '{{FRAMEWORK}}': projectInfo.framework,
-    '{{DETECTED_DIRS}}': projectInfo.dirs.slice(0, 6).join(', '),
-    '{{LAST_COMMIT}}': gitContext.lastCommit || '—',
-    '{{LAST_COMMIT_HASH}}': gitContext.lastCommitHash || '—',
-    '{{BRANCH}}': gitContext.branch || '—',
-    '{{DATE}}': new Date().toISOString().slice(0, 10),
-    '{{FILE_COUNT}}': String(projectInfo.totalFiles || 0)
+  const variables = {
+    '{{PROJECT_NAME}}': projectInfo.name || 'my-project',
+    '{{PROJECT_TYPE}}': projectInfo.type || 'unknown',
+    '{{FRAMEWORK}}': projectInfo.framework || 'unknown',
+    '{{DETECTED_DIRS}}': projectInfo.dirs?.join(', ') || 'none detected',
+    '{{FILE_COUNT}}': String(projectInfo.totalFiles || 0),
+    '{{LAST_COMMIT}}': gitContext.lastCommit || 'no git history',
+    '{{LAST_COMMIT_HASH}}': gitContext.lastCommitHash || '',
+    '{{BRANCH}}': gitContext.branch || 'unknown',
+    '{{DATE}}': new Date().toISOString().split('T')[0],
   };
-
-  const templateDir = TEMPLATE_DIR(import.meta.url);
 
   // Create required directories
   const dirs = [
@@ -61,49 +66,46 @@ export async function scaffold(cwd, projectInfo, gitContext) {
 
   // Copy and fill regular files
   for (const entry of fileMap) {
-    const srcPath = path.join(templateDir, entry.src);
+    const srcPath = path.join(TEMPLATES_DIR, entry.src);
     const destPath = path.join(cwd, entry.dest);
+
+    if (!existsSync(srcPath)) {
+      missingTemplates.push(entry.dest);
+      continue;
+    }
 
     if (existsSync(destPath)) {
       skipped.push(entry.dest);
       continue;
     }
 
-    if (!existsSync(srcPath)) {
-      skipped.push(entry.dest + ' (template missing)');
-      continue;
-    }
-
     let content = readFileSync(srcPath, 'utf8');
-    content = fillTemplate(content, vars);
+    content = fillTemplate(content, variables);
     writeFileSync(destPath, content, 'utf8');
     created.push(entry.dest);
 
     if (entry.executable) {
-      try {
-        const { chmodSync } = await import('node:fs');
-        chmodSync(destPath, 0o755);
-      } catch {}
+      chmodSync(destPath, 0o755);
     }
   }
 
   // Copy and fill rule files
   for (const entry of ruleMap) {
-    const srcPath = path.join(templateDir, entry.src);
+    const srcPath = path.join(TEMPLATES_DIR, entry.src);
     const destPath = path.join(cwd, entry.dest);
+
+    if (!existsSync(srcPath)) {
+      missingTemplates.push(entry.dest);
+      continue;
+    }
 
     if (existsSync(destPath)) {
       skipped.push(entry.dest);
       continue;
     }
 
-    if (!existsSync(srcPath)) {
-      skipped.push(entry.dest + ' (template missing)');
-      continue;
-    }
-
     let content = readFileSync(srcPath, 'utf8');
-    content = fillTemplate(content, vars);
+    content = fillTemplate(content, variables);
     writeFileSync(destPath, content, 'utf8');
     created.push(entry.dest);
   }
@@ -118,12 +120,17 @@ export async function scaffold(cwd, projectInfo, gitContext) {
     skipped.push('.memory/decisions.md');
   }
 
-  return { created, skipped };
+  if (missingTemplates.length > 0) {
+    console.error('\n  \u26A0 Some templates were not found in the package. Run:\n     npx foundation-ai@latest init\n     after updating to the latest version.\n');
+  }
+
+  return { created, skipped, missingTemplates };
 }
 
-function fillTemplate(content, vars) {
-  for (const [key, value] of Object.entries(vars)) {
-    content = content.replaceAll(key, value);
+function fillTemplate(content, variables) {
+  let result = content;
+  for (const [key, value] of Object.entries(variables)) {
+    result = result.replaceAll(key, value);
   }
-  return content;
+  return result;
 }

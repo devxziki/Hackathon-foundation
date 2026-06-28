@@ -73,7 +73,7 @@ export async function init() {
   } catch {}
 
   // Print success
-  printSuccess(result.created, result.skipped, cwd);
+  printSuccess(result.created, result.skipped, result.missingTemplates, cwd);
 }
 
 function updateGitignore(cwd) {

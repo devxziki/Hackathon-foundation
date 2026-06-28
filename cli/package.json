@@ -1,6 +1,6 @@
 {
   "name": "foundation-ai",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Set up AI context continuity in any project — works with OpenCode, Cursor, VS Code, Claude Code, Antigravity, or any AI tool. Run with npx, no global install needed.",
   "bin": {
     "foundation-ai": "./bin/foundation.js"

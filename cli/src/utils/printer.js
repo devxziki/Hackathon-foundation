@@ -22,7 +22,7 @@ export function printDetection(projectInfo, gitContext) {
   console.log();
 }
 
-export function printSuccess(created, skipped, cwd) {
+export function printSuccess(created, skipped, missingTemplates, cwd) {
   console.log(kleur.green(`  ✓ Foundation AI initialized in ${cwd}\n`));
 
   if (created.length > 0) {
@@ -36,6 +36,14 @@ export function printSuccess(created, skipped, cwd) {
   if (skipped.length > 0) {
     console.log(kleur.yellow('  Skipped (already exist):\n'));
     for (const file of skipped) {
+      console.log(`    ${kleur.yellow('·')} ${file}`);
+    }
+    console.log();
+  }
+
+  if (missingTemplates && missingTemplates.length > 0) {
+    console.log(kleur.yellow('  Skipped (template missing):\n'));
+    for (const file of missingTemplates) {
       console.log(`    ${kleur.yellow('·')} ${file}`);
     }
     console.log();

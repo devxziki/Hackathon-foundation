@@ -2,30 +2,25 @@
 
 ## Status
 
-- **Phase:** Initial scaffold
-- **Task:** Set up AI context layer for {{PROJECT_NAME}}
-- **State:** Pending — state files need review
+- **Phase:** Active development
+- **Task:** {{LAST_COMMIT}}
+- **State:** In progress
 
 ## Objective
 
-Initialize the AI context continuity system for {{PROJECT_NAME}} ({{PROJECT_TYPE}} / {{FRAMEWORK}}). After scaffold, review and update state files with real project context.
+Continue development of {{PROJECT_NAME}}.
+Review codebase and define the next specific task.
 
-## Focus area
+## What is already done
 
-Project setup
+{{DETECTED_DIRS}}
+Total files: {{FILE_COUNT}}
 
-## Started
+## What remains
 
-{{DATE}}
-
-## Completed
-
-TBD
+- Review codebase and define specific next steps
+- Update this file with the real current task and acceptance criteria
 
 ## Blockers
 
 None
-
-## Next action
-
-Review and update company/workspace/state files with current project state.
