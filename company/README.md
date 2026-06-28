@@ -26,7 +26,7 @@ This directory is the organization itself. It contains the shared knowledge, dep
 
 This directory will be populated in phases:
 
-1. `handbook/` — Shared context, engineering standards, coding conventions
+1. `handbook/` — Shared context, engineering standards, coding conventions *(populated)*
 2. `departments/` — Engineering roles and department definitions
 3. `policies/` — Rules, quality gates, and engineering policies
 4. `assets/` — Reusable templates, skills, workflows, checklists, playbooks
