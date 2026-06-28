@@ -58,6 +58,24 @@ Every document here defines *why* this project exists, *what* it aims to become,
 
 These documents are the constitution of the repository. Every phase, every file, every decision must be consistent with them.
 
+## Relationship to company/handbook/
+
+This `docs/` directory and `company/handbook/` serve complementary roles:
+
+| Aspect | `docs/` | `company/handbook/` |
+|---|---|---|
+| **Audience** | Public — new users, contributors, evaluators | Internal — AI assistants and active contributors |
+| **Purpose** | Explain the project, attract contributors, document the catalog | Govern behavior, define principles, enforce standards |
+| **Content** | Reference docs, catalogs, guides, FAQ, roadmap | Mission, culture, engineering principles, policies |
+| **Update frequency** | Changes with major milestones | Changes when principles or standards evolve |
+| **Reading order** | Start here if you are new to the project | Read here before starting any work |
+
+They are complementary, not duplicates. `docs/` tells you **what** the project is and **why** it exists. `company/handbook/` tells you **how** to work inside it. Both are needed — do not merge them.
+
+- New users should start in `docs/` (especially [VISION.md](./VISION.md), [MISSION.md](./MISSION.md), [ARCHITECTURE.md](./ARCHITECTURE.md)).
+- AI assistants should start in `company/handbook/` (especially `mission.md`, `company-culture.md`, `engineering-principles.md`).
+- Contributors who need governance rules should reference `company/policies/`.
+
 ## Future scalability
 
 As the project grows, this directory may expand to include:

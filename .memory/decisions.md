@@ -61,3 +61,19 @@
 **Made by:** CEO
 
 **Context:** Consistent design principle across all phases.
+
+---
+
+## 2026-06-28: Keep docs/ and company/handbook/ as complementary directories
+
+**Decision:** Retained both `docs/` (27 public reference files) and `company/handbook/` (14 internal governance files) as separate directories with explicit cross-references in their respective READMEs.
+
+**Rationale:** The two directories serve different audiences and purposes. `docs/` is public-facing — it explains the project to new users, contributors, and evaluators. `company/handbook/` is internal-facing — it governs AI assistant behavior with mission, culture, principles, and policies. Merging them would create a single document set that serves neither audience well. The cross-reference sections in both READMEs eliminate confusion about which to use.
+
+**Alternatives considered:**
+- Merge all into `company/handbook/` — rejected because the 27 `docs/` files are reference documentation (model catalogs, FAQ, roadmap) that is not governance-related and does not belong in a handbook.
+- Remove `docs/` entirely — rejected because it contains valuable reference content (integration guides, model catalog) that is not replicated in the handbook.
+
+**Made by:** CEO
+
+**Context:** Structural gap fixes — `docs/README.md` and `company/handbook/README.md` now each link to the other with an explanation of their complementary roles.

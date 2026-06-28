@@ -51,6 +51,15 @@ Every AI role in `company/departments/` references the handbook. Every policy in
 4. **Completion.** Use `definition-of-done.md` to verify the task is complete.
 5. **Reference.** Use `glossary.md` for any unfamiliar terms.
 
+## Relationship to docs/
+
+The `docs/` directory at the project root serves public-facing reference documentation (architecture overviews, integration guides, model catalogs, FAQ, roadmap). This handbook is for internal governance — principles, policies, and standards that govern every session.
+
+- **Use `docs/`** when you need to understand what the project is and how it fits into the broader ecosystem.
+- **Use `company/handbook/`** when you need to know the rules, principles, and standards for executing work.
+
+See `docs/README.md` for the full public documentation index.
+
 ## Future expansion
 
 As the framework grows, the handbook may expand to include:
