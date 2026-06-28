@@ -1,4 +1,4 @@
-# Hackathon Foundation
+# Dev Vortex
 
 An open-source, AI-native workspace standard that solves AI context loss across CLI, IDE, and chat tools. Powered by [DevVortex](https://www.npmjs.com/package/dev-vortex) — `npx dev-vortex init`.
 
