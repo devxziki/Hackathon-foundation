@@ -5,6 +5,7 @@ import { detectProject } from '../utils/detect.js';
 import { getGitContext } from '../utils/gitContext.js';
 import { scaffold } from '../utils/scaffold.js';
 import { printBanner, printDetection, printSuccess, printError } from '../utils/printer.js';
+import { runGraphify } from '../graphify/index.js';
 
 export async function init() {
   const cwd = process.cwd();
@@ -66,6 +67,23 @@ export async function init() {
   } catch {}
 
   printSuccess(result.created, result.skipped, cwd);
+
+  const graphifyResponse = await prompts({
+    type: 'confirm',
+    name: 'value',
+    message: 'Do you want to analyze your code with Graphify and generate an interactive code graph?',
+    initial: false
+  });
+
+  if (graphifyResponse.value) {
+    await runGraphify(cwd);
+  } else {
+    await prompts({
+      type: 'text',
+      name: '_',
+      message: 'You can use npx dev-vortex graphify anytime to analyze your code.\nPress Enter to continue...'
+    });
+  }
 }
 
 function updateGitignore(cwd) {

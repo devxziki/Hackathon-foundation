@@ -36,6 +36,12 @@ export async function main() {
     return;
   }
 
+  if (command === 'graphify') {
+    const { graphify } = await import('./commands/graphify.js');
+    await graphify();
+    return;
+  }
+
   printUsage();
 }
 
@@ -47,6 +53,7 @@ function printUsage() {
     npx dev-vortex init       Set up Vortex in current folder
     npx dev-vortex status     Show current AI session state
     npx dev-vortex resume     Print paste-ready context for any AI tool
+    npx dev-vortex graphify   Analyze code and generate interactive knowledge graph
 
   Works with: OpenCode · Cursor · VS Code · Claude Code · Antigravity · any AI CLI
 `);
